@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    <title>SINIGANG 2 GO | SALES RECORD</title>
+    
+    <link rel="stylesheet" href="sales.css">   
+    
+    </head>
+    <body>
+            <header class="topheader">
+                <h1 style="text-align: center;">SINIGANG 2 GO</h1>
+
+                <div class="staff-info">
+        <span id="staffName">Staff: Not logged in</span>
+        <button type="button" 
+                class="head-button"
+                id="logoutButton">Log-out
+            </button>
+    </div>
+            </header>
+
+            <nav class="navbar">
+                <a href="index.html">HOME</a>
+                <a href="checkout.html">CHECKOUT</a>
+                <a href="stock.html" class="stock-link">STOCKS</a>
+                <a href="sales.html" class="active">RECORD SALES</a> 
+            </nav>
+        
+        <main class="container">
+            <div class="sales-heading">
+                <h2>Sales Report</h2>
+                <button type="button" id="historyButton">History</button>
+            </div>
+            
+            <div id="salesItems" class="sales-items"></div>
+
+                <div class="sales-footer">
+                <h3>
+                    Total:
+                    <span id="salesTotal">₱0.00</span>
+                </h3>
+
+                <button type="button" id="endShiftButton">
+                    End Shift
+                </button>
+            </div>
+
+            <div id="stockAlert" class="stock-alert" hidden>
+            <strong>!</strong>
+            <span id="stockAlertMessage"></span>
+        </div>
+
+        </main>
+
+       
+<dialog id="endshiftDialog" class="modal">
+    <div class="modal-content">
+
+        <button
+            type="button"
+            id="cancelEndShift"
+            class="close-button"
+            aria-label="Close">
+            &times;
+        </button>
+
+        <h2>End Shift?</h2>
+
+        <p>Are you sure you want to end your shift?</p>
+
+        <div class="modal-actions">
+            <button type="button" id="cancelShiftButton">
+                Cancel
+            </button>
+
+            <button type="button" id="confirmEndShift">
+                Confirm
+            </button>
+        </div>
+
+    </div>
+</dialog>
+
+<dialog id="shiftEndedDialog" class="modal">
+    <div class="modal-content shift-ended-content">
+
+        <button
+            type="button"
+            id="closeShiftSummary"
+            class="close-button"
+            aria-label="Close">
+            &times;
+        </button>
+
+        <h2>Shift ended</h2>
+
+        <div class="shift-summary-meta">
+            <p>
+                <strong>Shift date:</strong>
+                <span id="summaryShiftDate">—</span>
+            </p>
+
+            <p>
+                <strong>Staff:</strong>
+                <span id="summaryShiftStaff">—</span>
+            </p>
+
+            <p>
+                <strong>Start Shift:</strong>
+                <span id="summaryShiftStart">—</span>
+            </p>
+
+            <p>
+                <strong>End Shift:</strong>
+                <span id="summaryShiftEnd">—</span>
+            </p>
+        </div>
+
+        <hr>
+
+        <h3>Shift transactions</h3>
+
+        <div id="shiftTransactionList" class="shift-transaction-list"></div>
+
+        <div class="shift-summary-total">
+            <strong>Total shift sales</strong>
+            <strong id="summaryShiftTotal">₱0.00</strong>
+        </div>
+
+        <div class="modal-actions">
+            <button type="button" id="confirmShiftSummary">
+                OK
+            </button>
+        </div>
+
+    </div>
+</dialog>
+        
+<dialog id="logoutDialog" class="modal">
+    <div class="modal-content">
+
+        <button
+            type="button"
+            id="cancelLogoutX"
+            class="close-button"
+            aria-label="Close">
+            &times;
+        </button>
+
+        <h3>Logging out</h3>
+
+        <p>Are you sure you want to log-out?</p>
+
+        <div class="modal-actions">
+            <button type="button" id="cancelLogout">
+                Cancel
+            </button>
+
+            <button type="button" id="confirmLogout">
+                Confirm
+            </button>
+        </div>
+
+    </div>
+</dialog>
+
+        <dialog id="historyDialog" class="modal history-dialog">
+    <div class="history-content">
+        <div class="history-header">
+            <h2>Sales History</h2>
+            <button
+                type="button"
+                id="closeHistoryX"
+                class="close-button"
+                aria-label="Close Sales History"
+            >&times;</button>
+        </div>
+
+        <div id="historyList" class="history-list"></div>
+
+        <div class="history-footer">
+            <button type="button" id="closeHistoryButton">
+                Close
+            </button>
+        </div>
+    </div>
+</dialog>
+
+        <script src="page-guard.js"></script>
+        <script src="logout.js"></script>
+        <script src="session.js"></script>
+         <script src="inventory.js"></script>
+        <script>
+            updateStockWarning();
+        </script>
+        <script src="sales.js"></script>
+        
+    </body>
+</html>

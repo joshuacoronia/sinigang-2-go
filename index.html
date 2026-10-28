@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    <title>SINIGANG 2 GO | HOME</title>
+    
+    <link rel="stylesheet" href="home.css">   
+    
+    </head>
+    <body>
+            <header class="topheader">
+                <h1 style="text-align: center;">SINIGANG 2 GO</h1>
+
+                <div class="staff-info">
+                    <span id="staffName">Staff: Not logged in</span>
+                    <button type="button" 
+                            class="head-button"
+                            id="logoutButton">Log-out
+                    </button>
+                </div>
+            </header>
+
+            <section id="shiftGate" class="shift-gate">
+                    <h2>Are you ready?</h2>
+                    <p>Please start your shift before using the POS.</p>
+                    <button type="button" id="startShiftButton">
+                            Start Shift
+                    </button>
+            </section>
+            
+            <nav class="navbar" id="navbar">
+                <a href="index.html" class="active">HOME</a>
+                <a href="checkout.html">CHECKOUT</a>
+                <a href="stock.html" class="stock-link">STOCKS</a>
+                <a href="sales.html">RECORD SALES</a> 
+            </nav>
+        
+        <main class="container" id="mainContent">
+            <h2>Menu</h2>
+
+            <section class="menu-grid" id="menuGrid">
+                
+                <div class="menu-card">
+                    <h3>Sinigang na Salmon Head</h3>
+                    <p class="price">₱399</p>
+                    <button 
+                    type="button"
+                    class="add-button"
+                    data-name="Sinigang na Salmon Head"
+                    data-price="399">
+                    + Add
+                    </button>
+                </div>
+
+                <div class="menu-card">
+                    <h3>Sinigang na Hipon</h3>
+                    <p class="price">₱350</p>
+                    <button 
+                    type="button"
+                    class="add-button"
+                    data-name="Sinigang na Hipon"
+                    data-price="350">
+                    + Add
+                    </button>
+                </div>
+
+                <div class="menu-card">
+                    <h3>Sinigang na Ulo/Panga</h3>
+                    <p class="price">₱399</p>
+                    <button 
+                    type="button"
+                    class="add-button"
+                    data-name="Sinigang na Ulo/Panga"
+                    data-price="399">
+                    + Add
+                    </button>
+                </div>
+
+                <div class="menu-card">
+                    <h3>Sinigang na Beef w/ watermelon</h3>
+                    <p class="price">₱399</p>
+                    <button 
+                    type="button"
+                    class="add-button"
+                    data-name="Sinigang na Beef w/ watermelon"
+                    data-price="399">
+                    + Add
+                    </button>
+                </div>
+
+                <div class="menu-card">
+                    <h3>Sinigang na Pampano</h3>
+                    <p class="price">450</p>
+                    <button 
+                    type="button"
+                    class="add-button"
+                    data-name="Sinigang na Pampano"
+                    data-price="450">
+                    + Add
+                    </button>
+                    </div>
+
+                <div class="menu-card">
+                    <h3>Sinigang na Liempo</h3>
+                    <p class="price">₱350</p>
+                    <button 
+                    type="button"
+                    class="add-button"
+                    data-name="Sinigang na Liempo"
+                    data-price="350">
+                    + Add
+                    </button>
+                    </div>
+
+            </section>
+
+            <hr class="menu-divider">
+
+            <h2>Add-ons</h2>
+
+            <section class="menu-grid addons grid" id="addonsGrid">
+
+                <div class="menu-card">
+                    <h3>Rice</h3>
+                    <p class="price">15</p>
+                    <button 
+                    type="button"
+                    class="add-button"
+                    data-name="Rice"
+                    data-price="15">
+                    + Add
+                    </button>
+                </div>
+
+                <div class="menu-card">
+                    <h3>Patis na Chili Mansi</h3>
+                    <p class="price">100</p>
+                    <button 
+                    type="button"
+                    class="add-button"
+                    data-name="Patis na Chili Mansi"
+                    data-price="100">
+                    + Add
+                    </button>
+                </div>
+
+            </section>
+        </main>
+
+        <div id="notification" class="notification"
+            role="status" aria-live="polite">
+        </div>
+
+        
+<dialog id="logoutDialog" class="modal">
+    <div class="modal-content">
+
+        <button
+            type="button"
+            id="cancelLogoutX"
+            class="close-button"
+            aria-label="Close">
+            &times;
+        </button>
+
+        <h2>Logging out</h2>
+
+        <p>Are you sure you want to log-out?</p>
+
+        <div class="modal-actions">
+            <button type="button" id="cancelLogout">
+                Cancel
+            </button>
+
+            <button type="button" id="confirmLogout">
+                Confirm
+            </button>
+        </div>
+
+    </div>
+</dialog>
+
+        <script src="logout.js"></script>
+        <script src="session.js">   </script>
+        <script src="inventory.js"></script>
+        <script>
+            updateStockWarning();
+        </script>
+        <script src="products.js"></script>
+        <script src="home.js"></script>
+
+    </body>
+</html>

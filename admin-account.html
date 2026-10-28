@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SINIGANG 2 GO | Account Creation</title>
+
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="admin-home.css">
+    <link rel="stylesheet" href="admin-account.css">
+</head>
+<body>
+
+    <header class="topheader">
+        <h1 style="text-align: center;">SINIGANG 2 GO</h1>
+
+        <div class="staff-info">
+            <span id="adminName">Admin: Not logged in</span>
+            <button type="button" class="head-button" id="logoutButton">
+                Log-out
+            </button>
+        </div>
+    </header>
+
+    <nav class="navbar" id="navbar">
+        <a href="admin.html">HOME</a>
+        <a href="admin-stock.html" class="stock-link">STOCKS</a>
+        <a href="admin-sales.html">RECORD SALES</a>
+        <a href="admin-account.html" class="active">ACCOUNT</a>
+    </nav>
+
+    <main class="container account-container">
+        <h2>account creation</h2>
+
+        <p class="account-intro">
+            Create staff and administrator accounts for SINIGANG 2 GO.
+        </p>
+
+        <div class="account-sections">
+
+            <!-- STAFF CREATION -->
+            <section class="account-card">
+                <h3>Staff Creation</h3>
+                <p class="section-description">
+                    Create an account for a staff member.
+                </p>
+
+                <form id="staffAccountForm">
+                    <label for="staffFullName">Full Name</label>
+                    <input
+                        type="text"
+                        id="staffFullName"
+                        placeholder="Enter staff's full name"
+                        maxlength="80"
+                        autocomplete="off"
+                        required>
+
+                    <label for="staffUsername">Username</label>
+                    <input
+                        type="text"
+                        id="staffUsername"
+                        placeholder="Create a username"
+                        maxlength="30"
+                        pattern="[A-Za-z0-9._-]+"
+                        title="Use letters, numbers, periods, underscores, or hyphens."
+                        autocomplete="off"
+                        required>
+
+                    <label for="staffPassword">Password</label>
+                    <input
+                        type="password"
+                        id="staffPassword"
+                        placeholder="Create a password"
+                        minlength="5"
+                        maxlength="100"
+                        autocomplete="new-password"
+                        required>
+
+                    <label for="staffConfirmPassword">
+                        Confirm Password
+                    </label>
+                    <input
+                        type="password"
+                        id="staffConfirmPassword"
+                        placeholder="Re-enter password"
+                        minlength="5"
+                        maxlength="100"
+                        autocomplete="new-password"
+                        required>
+
+                    <p id="staffAccountMessage"
+                       class="account-message"
+                       role="status"
+                       aria-live="polite"></p>
+
+                    <button type="submit" class="account-submit">
+                        Create Staff Account
+                    </button>
+                </form>
+            </section>
+
+            <section class="account-card">
+                <h3>Admin Creation</h3>
+                <p class="section-description">
+                    Create an account with administrator access.
+                </p>
+
+                <form id="adminAccountForm">
+                    <label for="newAdminFullName">Full Name</label>
+                    <input
+                        type="text"
+                        id="newAdminFullName"
+                        placeholder="Enter administrator's full name"
+                        maxlength="80"
+                        autocomplete="off"
+                        required>
+
+                    <label for="newAdminUsername">Username</label>
+                    <input
+                        type="text"
+                        id="newAdminUsername"
+                        placeholder="Create a username"
+                        maxlength="30"
+                        pattern="[A-Za-z0-9._-]+"
+                        title="Use letters, numbers, periods, underscores, or hyphens."
+                        autocomplete="off"
+                        required>
+
+                    <label for="newAdminPassword">Password</label>
+                    <input
+                        type="password"
+                        id="newAdminPassword"
+                        placeholder="Create a password"
+                        minlength="5"
+                        maxlength="100"
+                        autocomplete="new-password"
+                        required>
+
+                    <label for="newAdminConfirmPassword">
+                        Confirm Password
+                    </label>
+                    <input
+                        type="password"
+                        id="newAdminConfirmPassword"
+                        placeholder="Re-enter password"
+                        minlength="5"
+                        maxlength="100"
+                        autocomplete="new-password"
+                        required>
+
+                    <p id="adminAccountMessage"
+                       class="account-message"
+                       role="status"
+                       aria-live="polite"></p>
+
+                    <button type="submit" class="account-submit">
+                        Create Admin Account
+                    </button>
+                </form>
+            </section>
+
+        </div>
+    </main>
+
+    <dialog id="logoutDialog" class="modal">
+        <div class="modal-content">
+            <button
+                type="button"
+                id="cancelLogoutX"
+                class="close-button"
+                aria-label="Close">
+                &times;
+            </button>
+
+            <h2>Logging out</h2>
+            <p>Are you sure you want to log-out?</p>
+
+            <div class="modal-actions">
+                <button type="button" id="cancelLogout">Cancel</button>
+                <button type="button" id="confirmLogout">Confirm</button>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog id="accountSuccessDialog" class="modal">
+    <div class="modal-content">
+        <button
+            type="button"
+            id="closeAccountSuccessX"
+            class="close-button"
+            aria-label="Close">
+            &times;
+        </button>
+
+        <h2>Account Created</h2>
+
+        <p id="accountSuccessMessage" role="status">
+            Account was successfully created.
+        </p>
+
+        <div class="modal-actions">
+            <button type="button" id="confirmAccountSuccess">
+                OK
+            </button>
+        </div>
+    </div>
+</dialog>
+
+    <script src="page-guard.js"></script>
+    <script src="logout.js"></script>
+    <script src="admin-account.js"></script>
+
+</body>
+</html>

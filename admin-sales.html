@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SINIGANG 2 GO | ADMIN SALES RECORD</title>
+
+    <!-- Reuse the existing sales styling -->
+    <link rel="stylesheet" href="sales.css">
+    <link rel="stylesheet" href="admin-sales.css">
+</head>
+<body>
+    <header class="topheader">
+        <h1 style="text-align: center;">SINIGANG 2 GO</h1>
+
+        <div class="staff-info">
+            <span id="staffName">Admin: admin</span>
+            <button type="button" class="head-button" id="logoutButton">
+                Log-out
+            </button>
+        </div>
+    </header>
+
+    <nav class="navbar">
+        <a href="admin.html">HOME</a>
+        <a href="admin-stock.html" class="stock-link">STOCKS</a>
+        <a href="admin-sales.html" class="active">RECORD SALES</a>
+        <a href="admin-account.html">ACCOUNT</a>
+    </nav>
+
+    <main class="container">
+        <div class="sales-heading">
+            <h2>Sales Report</h2>
+        </div>
+
+        <p class="sales-description">
+            View staff shifts, completed transactions, and individual shift sales.
+        </p>
+
+        <div id="adminSalesItems" class="sales-items"></div>
+
+        <div id="stockAlert" class="stock-alert" hidden>
+            <strong>!</strong>
+            <span id="stockAlertMessage"></span>
+        </div>
+    </main>
+
+    <!-- Existing logout confirmation dialog -->
+    <dialog id="logoutDialog" class="modal">
+        <div class="modal-content">
+            <button
+                type="button"
+                id="cancelLogoutX"
+                class="close-button"
+                aria-label="Close">
+                &times;
+            </button>
+
+            <h3>Logging out</h3>
+            <p>Are you sure you want to log-out?</p>
+
+            <div class="modal-actions">
+                <button type="button" id="cancelLogout">Cancel</button>
+                <button type="button" id="confirmLogout">Confirm</button>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- Remove shift confirmation -->
+    <dialog id="removeShiftDialog" class="modal">
+        <div class="modal-content">
+            <button
+                type="button"
+                id="cancelRemoveShiftX"
+                class="close-button"
+                aria-label="Close">
+                &times;
+            </button>
+
+            <h3>Remove shift?</h3>
+
+            <p>
+                This shift will be marked as removed.
+            </p>
+
+            <div class="modal-actions">
+                <button type="button" id="cancelRemoveShift">Cancel</button>
+                <button type="button" id="confirmRemoveShift">
+                    Remove shift
+                </button>
+            </div>
+        </div>
+    </dialog>
+
+    <script src="page-guard.js"></script>
+    <script src="logout.js"></script>
+    <script src="session.js"></script>
+    <script src="inventory.js"></script>
+    <script>
+        if (typeof updateStockWarning === "function") {
+            updateStockWarning();
+        }
+    </script>
+    <script src="admin-sales.js"></script>
+</body>
+</html>

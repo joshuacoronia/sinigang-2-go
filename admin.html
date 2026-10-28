@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SINIGANG 2 GO | Admin Home</title>
+
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="admin-home.css">
+</head>
+<body>
+
+    <header class="topheader">
+        <h1 style="text-align: center;">SINIGANG 2 GO</h1>
+
+        <div class="staff-info">
+            <span id="adminName">Admin: Not logged in</span>
+            <button type="button" class="head-button" id="logoutButton">
+                Log-out
+            </button>
+        </div>
+    </header>
+
+    <nav class="navbar" id="navbar">
+        <a href="admin.html" class="active">HOME</a>
+        <a href="admin-stock.html" class="stock-link">STOCKS</a>
+        <a href="admin-sales.html">RECORD SALES</a>
+        <a href="admin-account.html">ACCOUNT</a>
+    </nav>
+
+    <main class="container" id="mainContent">
+        <h2>Menu</h2>
+        <section class="menu-grid" id="menuGrid"></section>
+
+        <hr class="menu-divider">
+
+        <h2>Add-ons</h2>
+        <section class="menu-grid addons-grid" id="addonsGrid"></section>
+
+        <div id="stockAlert" class="stock-alert" hidden>
+            <strong>!</strong>
+            <span id="stockAlertMessage"></span>
+        </div>
+
+    </main>
+
+    <dialog id="addProductDialog" class="modal add-product-modal">
+        <div class="modal-content">
+            <button type="button" id="closeProductModal"
+                class="close-button" aria-label="Close">
+                &times;
+            </button>
+
+            <h2 id="productModalTitle">Add Product</h2>
+
+            <form id="addProductForm">
+                <label for="productName">Product Name:</label>
+                <input
+                    type="text"
+                    id="productName"
+                    placeholder="Enter product name"
+                    maxlength="80"
+                    required>
+
+                <label for="productPrice">Price:</label>
+                <input
+                    type="number"
+                    id="productPrice"
+                    placeholder="Enter price"
+                    min="0.01"
+                    step="0.01"
+                    required>
+
+                <p id="productError" role="alert"></p>
+
+                <div class="modal-actions">
+                    <button type="submit">Confirm</button>
+                </div>
+            </form>
+        </div>
+    </dialog>
+    
+<dialog id="removeProductDialog" class="modal">
+    <div class="modal-content">
+        <button
+            type="button"
+            id="cancelRemoveX"
+            class="close-button"
+            aria-label="Close">
+            &times;
+        </button>
+
+        <h2>Remove Item</h2>
+
+        <p>Are you sure you want to remove this item?</p>
+
+        <div class="modal-actions">
+            <button type="button" id="cancelRemove">
+                Cancel
+            </button>
+
+            <button type="button" id="confirmRemove">
+                Confirm
+            </button>
+        </div>
+    </div>
+</dialog>
+
+
+    <dialog id="logoutDialog" class="modal">
+        <div class="modal-content">
+            <button type="button" id="cancelLogoutX"
+                class="close-button" aria-label="Close">
+                &times;
+            </button>
+
+            <h2>Logging out</h2>
+            <p>Are you sure you want to log-out?</p>
+
+            <div class="modal-actions">
+                <button type="button" id="cancelLogout">Cancel</button>
+                <button type="button" id="confirmLogout">Confirm</button>
+            </div>
+        </div>
+    </dialog>
+
+    <script src="page-guard.js"></script>
+    <script src="products.js"></script>
+    <script src="inventory.js"></script>
+    <script>
+    if (typeof updateStockWarning === "function") {
+        updateStockWarning();
+    }
+</script>
+    <script src="admin-home.js"></script>
+
+</body>
+</html>

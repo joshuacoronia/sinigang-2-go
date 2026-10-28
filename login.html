@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    <title>SINIGANG 2 GO | Login</title>
+    
+    <link rel="stylesheet" href="login-style.css">   
+    
+    </head>
+    <body>
+
+        <div class="login-container">
+            <h1>SINIGANG 2 GO</h1>
+            <p class="subtitle">Point of Sale System</p>
+
+            <form id="loginForm">
+
+                <label for="username">Username</label>
+                <input
+                    type="text"
+                    id="username"
+                    placeholder="Enter your username"
+                    required>
+                    
+                    <label for="password">Password</label>
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter your password"
+                        required>
+
+                    <p id="errorMessage"></p>
+                    <button type="submit">LOG IN</button>
+            </form>
+        </div>
+
+        <script src="loginscript.js"></script>
+    </body>
+</html>

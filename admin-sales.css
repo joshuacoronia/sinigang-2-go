@@ -1,0 +1,64 @@
+.sales-description {
+    margin: 0 0 18px;
+    color: #526575;
+}
+
+.admin-shift-card {
+    margin-bottom: 20px;
+}
+
+.admin-shift-card.removed-shift {
+    opacity: 0.82;
+    border: 1px solid #e5a2a2;
+}
+
+.removed-shift .history-overview,
+.removed-shift .history-transactions {
+    text-decoration: line-through;
+    text-decoration-color: #bd3333;
+}
+
+.removed-shift-notice {
+    margin: 12px 0;
+    padding: 10px 12px;
+    border-left: 4px solid #c62828;
+    border-radius: 4px;
+    background: #fff0f0;
+    color: #b71c1c;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.shift-admin-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 16px;
+}
+
+.remove-shift-button {
+    padding: 9px 15px;
+    border: none;
+    border-radius: 6px;
+    background: #c62828;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.remove-shift-button:hover {
+    background: #a51f1f;
+}
+
+.remove-shift-button:focus-visible {
+    outline: 3px solid #ef9a9a;
+    outline-offset: 2px;
+}
+
+#removeShiftDialog .modal-content {
+    max-width: 420px;
+}
+
+#removeShiftDialog .modal-actions button:last-child {
+    background: #c62828;
+    color: #fff;
+}

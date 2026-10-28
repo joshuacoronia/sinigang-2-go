@@ -1,0 +1,366 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f2fafd;
+    color: #164e63;
+}
+
+.head-button {
+    margin: auto;
+    background: #92c6d8;
+    border: none;
+    border-radius: 7px;
+    padding: 11px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.head-button:hover {
+    background-color: #5b7b86;
+}
+
+.head-button:active {
+    transform: scale(0.97);
+}
+
+.staff-info {
+    text-align: right;
+    background: #087da5;
+    color: white;
+    margin: auto;
+}
+
+button {
+    color: white;
+}
+
+.topheader {
+    background: #087da5;
+    color: white;
+    padding: 40px 60px;
+}
+
+.topheader h1 {
+    margin: 10;
+    font-size: 30px;
+}
+
+.topheader p {
+    margin: 5px 0 0;
+    color: #e0f7ff;
+    font-size: 14px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: white;
+    border-bottom: 1px solid #d5e7ef;
+    padding: 0 20px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #24566b;
+    padding: 16px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    border-bottom: 3px solid transparent;
+}
+
+.navbar a:hover {
+    background: #e5f5fa;
+    color: #087da5;
+}
+
+.navbar a.active {
+    color: #087da5;
+    border-bottom-color: #087da5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;   
+    padding: 25px;
+}
+
+.container h2 {
+    text-align: left;
+    margin: 0 0 20px;
+    font-size: 24px;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.menu-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: white;
+    border: 1px solid #d5e7ef;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 3px 10px rgba(0, 65, 90, 0.06);
+}
+
+.menu-card h3 {
+    font-size: 17px;
+    line-height: 1.5;
+    margin: 0 0 10px;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #087da5;
+    margin: 0 0 18px;
+}
+
+.add-button {
+    margin-top: auto;
+    background: #087da5;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    padding: 11px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.add-button:hover {
+    background: #056080;
+}
+
+.add-button:active {
+    transform: scale(0.97);
+}
+
+.menu-divider {
+    border: none;
+    border-top: 2px solid #b7dce8;
+    margin: 35px 0;
+}
+
+.addons-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.notification {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: #166534;
+    color: white;
+    padding: 13px 22px;
+    border-radius: 8px;
+    font-size: 14px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s, transform 0.25s;
+    z-index: 1000;
+    width: max-content;
+    max-width: calc(100% - 32px);
+    pointer-events: none;
+}
+
+.notification.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.shift-gate {
+    max-width: 500px;
+    margin: 60px auto;
+    padding: 35px 25px;
+    text-align: center;
+    background: white;
+    border: 1px solid #d5e7ef;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 65, 90, 0.06);
+}
+
+.shift-gate h2 {
+    color: #087da5;
+    margin-bottom: 12px;
+}
+
+.shift-gate p {
+    color: #64748b;
+    margin-bottom: 24px;
+}
+
+#startShiftButton {
+    width: auto;
+    min-width: 160px;
+    padding: 12px 22px;
+    background: #087da5;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#startShiftButton:hover {
+    background: #056080;
+}
+
+.hidden {
+    display: none !important;
+}
+
+button {
+     border: none;
+    border-radius: 7px;
+    padding: 11px 16px;
+    background: #087da5;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal {
+    width: min(90%, 500px);
+    max-height: 85vh;
+    overflow-y: auto;
+    border: none;
+    border-radius: 14px;
+    padding: 25px;
+    color: #164e63;
+    background: white;
+    box-shadow: 0 15px 45px rgba(0, 40, 60, 0.2);
+}
+
+.modal::backdrop {
+    background: rgba(5, 35, 50, 0.55);
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.modal-header h2 {
+    margin: 0;
+}
+
+.close {
+    margin: right;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    left: auto;
+    border: none;
+    background: transparent;
+    color: #164e63;
+    font-size: 28px;
+    padding: 0 6px;
+    margin: auto;
+}
+
+.close-button:hover {
+    background: #e5f5fa;
+}
+
+.modal-action,
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.modal-action button,
+.modal-actions button {
+    width: auto;
+    min-width: 100px;
+}
+
+.add-button:disabled {
+    background-color: #9ca3af;
+    color: #ffffff;
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+.stock-warning {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 19px;
+    height: 19px;
+    margin-left: 5px;
+    border-radius: 50%;
+    background: #d62828;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+
+@media (max-width: 600px) {
+    .top-header {
+        padding: 18px;
+    }
+
+    .navbar {
+        padding: 0 8px;
+        gap: 0;
+    }
+
+    .navbar a {
+        padding: 14px 10px;
+        font-size: 13px;
+    }
+
+    .container {
+        padding: 16px;
+    }
+
+    .menu-grid,
+    .addons-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .menu-card {
+        padding: 14px;
+    }
+
+    .menu-card h3 {
+        font-size: 15px;
+    }
+
+    .price {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 360px) {
+    .menu-grid,
+    .addons-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,77 @@
+.admin-stock-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+    width: 100%;
+}
+
+.admin-stock-controls .quantity {
+    flex: 0 0 3ch;
+    min-width: 3ch;
+    margin: 0;
+    text-align: center;
+    font-size: 28px;
+    line-height: 1.2;
+    font-variant-numeric: tabular-nums;
+    overflow: visible;
+}
+
+.stock-adjust-button {
+    flex: 0 0 38px;
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 22px;
+    line-height: 1;
+    background: #087da5;
+    color: white;
+}
+
+.stock-adjust-button:hover {
+    background: #065f7d;
+}
+
+.stock-adjust-button:active {
+    transform: scale(0.96);
+}
+
+.stock-adjust-button:disabled {
+    background: #b7cbd3;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.admin-stock-controls .quantity-label {
+    margin: 0 0 0 auto;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.stock-card h4 {
+    margin-top: 0;
+}
+
+@media (max-width: 520px) {
+    .admin-stock-controls {
+        gap: 6px;
+    }
+
+    .stock-adjust-button {
+        flex-basis: 36px;
+        width: 36px;
+        height: 36px;
+    }
+
+    .admin-stock-controls .quantity {
+        font-size: 25px;
+    }
+
+    .admin-stock-controls .quantity-label {
+        font-size: 11px;
+    }
+}
