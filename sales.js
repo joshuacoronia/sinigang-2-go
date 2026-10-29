@@ -221,16 +221,6 @@ function getShiftHistory() {
 function renderShiftHistory() {
     historyList.replaceChildren();
 
-    if (shift.removedAt) {
-    card.classList.add("removed-shift");
-
-    const notice = document.createElement("div");
-    notice.className = "removed-shift-notice";
-    notice.textContent = "This shift was removed by the admin.";
-
-    card.appendChild(notice);
-}
-
     const history = getShiftHistory().sort(function(a, b) {
         return new Date(b.startTime) - new Date(a.startTime);
     });
@@ -246,6 +236,16 @@ function renderShiftHistory() {
     history.forEach(function(shift) {
         const card = document.createElement("article");
         card.className = "history-card";
+
+        if (shift.removedAt) {
+    card.classList.add("removed-shift");
+
+    const notice = document.createElement("div");
+    notice.className = "removed-shift-notice";
+    notice.textContent = "This shift was removed by the admin.";
+
+    card.appendChild(notice);
+    }
 
         const date = document.createElement("h3");
         date.className = "history-date";
